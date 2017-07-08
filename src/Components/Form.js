@@ -10,7 +10,10 @@ class Form extends Component {
       headers: {},
     })
       .then(response => response.json())
-      .then(data => this.props.onSubmit(data))
+      .then(data => {
+        this.props.onSubmit(data)
+        this.setState({userName: ''})
+      })
       .catch(err => requestError(err, 'userData'))
 
     function requestError(e, part) {

@@ -5,7 +5,7 @@ class CardList extends Component {
   render() {
     return (
       <div className="CardList">
-        {this.props.cards.map(card => <Card {...card} />)}
+        {this.props.cards.map(card => <Card key={card.id} {...card} />)}
       </div>
     )
   }
