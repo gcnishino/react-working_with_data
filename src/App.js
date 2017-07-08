@@ -18,10 +18,14 @@ class App extends Component {
     ],
   }
 
+  addNewCard = cardInfo => {
+    this.setState(prevState => ({cards: prevState.cards.concat(cardInfo)}))
+  }
+
   render() {
     return (
       <div className="App">
-        <Form />
+        <Form onSubmit={this.addNewCard} />
         <CardList cards={this.state.cards} />
       </div>
     )
